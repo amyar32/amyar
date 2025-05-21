@@ -1,0 +1,15 @@
+.motionRoot {
+    position: fixed;
+}
+
+.root {
+    padding: rem(8) rem(14);
+}
+
+.btnLabel {
+    color: var(--mantine-color-white);
+}
+
+.btnLabelInactive {
+    font-weight: 200;
+}
