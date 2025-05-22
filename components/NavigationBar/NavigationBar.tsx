@@ -1,12 +1,14 @@
 'use client'
 
-import { Button, Center, Group } from "@mantine/core"
+import { ActionIcon, Button, Center, Divider, Group, useMantineColorScheme, useMantineTheme } from "@mantine/core"
 import globalClasses from '@/styles/global.module.css'
 import classes from "./NavigationBar.module.css"
 import { motion } from "motion/react"
 import Link from "next/link"
 import clsx from "clsx"
 import { usePathname } from "next/navigation"
+import { IconMoon, IconSun } from "@tabler/icons-react"
+import { useEffect, useState } from "react"
 
 const NAVIGATION_LIST = [
     { href: '/', label: 'Home' },
@@ -17,14 +19,22 @@ const NAVIGATION_LIST = [
 
 export default function NavigationBar() {
     const pathname = usePathname();
+    const theme = useMantineTheme();
+    const { toggleColorScheme, colorScheme } = useMantineColorScheme();
+    const isDarkMode = colorScheme === 'dark';
+
+    const [isClient, setIsClient] = useState<boolean>(false);
+
+    useEffect(() => { setIsClient(true) }, [])
 
     return (
         <Center>
-            <motion.div
+            {isClient && <motion.div
                 className={classes.motionRoot}
                 initial={{ top: -60 }}
                 transition={{ type: 'spring', bounce: 0.5 }}
                 animate={{ top: 25 }}
+                whileHover={{ scale: 1.03 }}
             >
                 <Group
                     classNames={{ root: clsx(classes.root, globalClasses.glassify) }}
@@ -32,7 +42,10 @@ export default function NavigationBar() {
                 >
                     {NAVIGATION_LIST.map(navigation => (
                         <Button
-                            classNames={{ label: clsx(classes.btnLabel, pathname !== navigation.href && classes.btnLabelInactive) }}
+                            classNames={{
+                                label: clsx(isDarkMode ? classes.btnLabel : classes.btnLabelDark,
+                                    pathname !== navigation.href && classes.btnLabelInactive)
+                            }}
                             key={navigation.label}
                             href={navigation.href}
                             component={Link}
@@ -41,8 +54,18 @@ export default function NavigationBar() {
                         >
                             {navigation.label}
                         </Button>))}
+                    <Divider
+                        color={isDarkMode ? theme.colors.gray[6] : theme.colors.gray[3]}
+                        size='xs'
+                        orientation="vertical"
+
+                    />
+                    <ActionIcon size='sm' variant="transparent" onClick={toggleColorScheme}>
+                        {isDarkMode ? <IconSun color="orange" /> : <IconMoon />}
+                    </ActionIcon>
                 </Group>
-            </motion.div>
+            </motion.div>}
+
         </Center>
     )
 }
