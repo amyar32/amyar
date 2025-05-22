@@ -1,6 +1,6 @@
 'use client'
 
-import { ActionIcon, Box, Button, Center, Container, Divider, Group, SimpleGrid, Stack, Text, useMantineTheme } from "@mantine/core";
+import { ActionIcon, Box, Button, Center, Container, Divider, Group, SimpleGrid, Stack, Text, TextInput, useMantineTheme } from "@mantine/core";
 import classes from './Footer.module.css';
 import globaclClasses from '@/styles/global.module.css';
 import clsx from "clsx";
@@ -40,7 +40,7 @@ export default function Footer() {
                     </Stack>
                     <Group justify="space-between" pr={50}>
                         <Stack>
-                            <Text c='gray' size="sm" fw={100}>General</Text>
+                            <Text c='gray' size="sm" fw={100}>Navigation</Text>
                             {NAVIGATION_LIST.map(navigation => (
                                 <Text
                                     size="sm"
@@ -70,9 +70,10 @@ export default function Footer() {
                     <Stack>
                         <Text size="md" fw={700} >Subscribe to Amin Yarits's blog newsletter</Text>
                         <Text size="xs" fw={100}>Don't miss out 😉. Get an email whenever I post, no spam.</Text>
-                        <Box>
-                            <Button size="xs" rightSection={<IconMail size={14} />} onClick={handleSubscribeButton}>Subscribe Now</Button>
-                        </Box>
+                        <Group gap='xs'>
+                            <TextInput size="xs" placeholder="Your Email" />
+                            <Button size="xs" rightSection={<IconMail size={14} />} onClick={handleSubscribeButton}>Subscribe</Button>
+                        </Group>
                     </Stack>
                     <Stack />
 
