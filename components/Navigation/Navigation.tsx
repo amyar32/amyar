@@ -9,13 +9,9 @@ import clsx from "clsx"
 import { usePathname } from "next/navigation"
 import { IconMoon, IconSun } from "@tabler/icons-react"
 import { useEffect, useState } from "react"
+import { NAVIGATION_LIST } from "@/constants"
 
-const NAVIGATION_LIST = [
-    { href: '/', label: 'Home' },
-    { href: '/blog', label: 'Blog' },
-    { href: '/projects', label: 'Project' },
-    { href: '/about', label: 'About' },
-];
+
 
 export default function NavigationBar() {
     const pathname = usePathname();
