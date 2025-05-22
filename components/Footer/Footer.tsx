@@ -1,6 +1,6 @@
 'use client'
 
-import { ActionIcon, Box, Button, Center, Container, Divider, Group, SimpleGrid, Stack, Text, TextInput, useMantineTheme } from "@mantine/core";
+import { ActionIcon, Button, Center, Container, Divider, Group, SimpleGrid, Stack, Text, TextInput, useMantineTheme } from "@mantine/core";
 import classes from './Footer.module.css';
 import globaclClasses from '@/styles/global.module.css';
 import clsx from "clsx";
@@ -22,7 +22,7 @@ export default function Footer() {
                 <SimpleGrid cols={{ xs: 1, sm: 3 }}>
                     <Stack>
                         <Text size="xl" fw={700} >Amin Yarits</Text>
-                        <Text size="xs" fw={100}>Always hese ngarti gancang poho in software engineering. So i made this personal website.</Text>
+                        <Text size="xs" fw={100}>Always hese ngarti gancang poho in software engineering. So i made this personal website to share my thoughts.</Text>
                         <Group>
                             <ActionIcon variant="transparent">
                                 <IconMail />
@@ -40,7 +40,7 @@ export default function Footer() {
                     </Stack>
                     <Group justify="space-between" pr={50}>
                         <Stack>
-                            <Text c='gray' size="sm" fw={100}>Navigation</Text>
+                            <Text size="sm" fw={100}>Navigation</Text>
                             {NAVIGATION_LIST.map(navigation => (
                                 <Text
                                     size="sm"
@@ -53,7 +53,7 @@ export default function Footer() {
                             ))}
                         </Stack>
                         <Stack>
-                            <Text c='gray' size="sm" fw={100}>Resources</Text>
+                            <Text size="sm" fw={100}>Resources</Text>
                             {RESOURCES_LIST.map(resource => (
                                 <Text
                                     size="sm"
@@ -68,7 +68,7 @@ export default function Footer() {
                     </Group>
 
                     <Stack>
-                        <Text size="md" fw={700} >Subscribe to Amin Yarits's blog newsletter</Text>
+                        <Text size="md" fw={700} >Subscribe to Amin Yarits's blog</Text>
                         <Text size="xs" fw={100}>Don't miss out 😉. Get an email whenever I post, no spam.</Text>
                         <Group gap='xs'>
                             <TextInput size="xs" placeholder="Your Email" />

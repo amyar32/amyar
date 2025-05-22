@@ -11,15 +11,14 @@ import { IconMoon, IconSun } from "@tabler/icons-react"
 import { useEffect, useState } from "react"
 import { NAVIGATION_LIST } from "@/constants"
 
-
-
 export default function NavigationBar() {
     const pathname = usePathname();
+    const [isClient, setIsClient] = useState<boolean>(false);
+
     const theme = useMantineTheme();
     const { toggleColorScheme, colorScheme } = useMantineColorScheme();
     const isDarkMode = colorScheme === 'dark';
 
-    const [isClient, setIsClient] = useState<boolean>(false);
 
     useEffect(() => { setIsClient(true) }, [])
 

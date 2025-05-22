@@ -1,6 +1,5 @@
 .root {
     border-radius: 0 !important;
-    position: fixed;
     bottom: 0;
     width: 100%;
     padding: rem(80) 0 rem(50) 0;

@@ -1,4 +1,7 @@
+import Screen from "@/components/Base/Screen/Screen";
 
 export default function HomePage() {
-  return (<></>);
+  return (
+    <Screen />
+  )
 }
