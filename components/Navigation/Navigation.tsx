@@ -2,7 +2,7 @@
 
 import { ActionIcon, Button, Center, Divider, Group, useMantineColorScheme, useMantineTheme } from "@mantine/core"
 import globalClasses from '@/styles/global.module.css'
-import classes from "./NavigationBar.module.css"
+import classes from "./Navigation.module.css"
 import { motion } from "motion/react"
 import Link from "next/link"
 import clsx from "clsx"
