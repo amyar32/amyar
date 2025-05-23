@@ -56,7 +56,7 @@ export default function NavigationBar() {
 
                     />
                     <ActionIcon size='sm' variant="transparent" onClick={toggleColorScheme}>
-                        {isDarkMode ? <IconSun color="orange" /> : <IconMoon />}
+                        {isDarkMode ? <IconSun color="orange" /> : <IconMoon color="teal" />}
                     </ActionIcon>
                 </Group>
             </motion.div>}

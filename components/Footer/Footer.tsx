@@ -31,16 +31,16 @@ export default function Footer() {
                             <Text size="xl" fw={700} >Amin Yarits Firdaus</Text>
                             <Text size="xs" fw={100}>Sometimes hese ngarti gancang poho in software engineering. So i made this personal website to save and share my thoughts.</Text>
                             <Group>
-                                <ActionIcon variant="transparent">
+                                <ActionIcon c='teal' variant="transparent">
                                     <IconMail />
                                 </ActionIcon>
-                                <ActionIcon variant="transparent">
+                                <ActionIcon c='teal' variant="transparent">
                                     <IconBrandLinkedin />
                                 </ActionIcon>
-                                <ActionIcon variant="transparent">
+                                <ActionIcon c='teal' variant="transparent">
                                     <IconBrandGithub />
                                 </ActionIcon>
-                                <ActionIcon variant="transparent">
+                                <ActionIcon c='teal' variant="transparent">
                                     <IconBrandTwitter />
                                 </ActionIcon>
                             </Group>
@@ -79,7 +79,7 @@ export default function Footer() {
                             <Text size="xs" fw={100}>In case you miss me, no spam surely.</Text>
                             <Group gap='xs'>
                                 <TextInput size="xs" placeholder="Your Email" />
-                                <Button size="xs" rightSection={<IconMail size={14} />} onClick={handleSubscribeButton}>Subscribe</Button>
+                                <Button color="teal" size="xs" rightSection={<IconMail size={14} />} onClick={handleSubscribeButton}>Subscribe</Button>
                             </Group>
                         </Stack>
                         <Stack />
