@@ -2,7 +2,7 @@
 
 import { ActionIcon, Button, Center, Container, Divider, Group, SimpleGrid, Stack, Text, TextInput, useMantineTheme } from "@mantine/core";
 import classes from './Footer.module.css';
-// import globaclClasses from '@/styles/global.module.css';
+import globalClasses from '@/styles/global.module.css';
 import clsx from "clsx";
 import { IconBrandGithub, IconBrandLinkedin, IconBrandTwitter, IconMail } from "@tabler/icons-react";
 import { NAVIGATION_LIST, RESOURCES_LIST } from "@/constants";
@@ -18,7 +18,7 @@ export default function Footer() {
 
     return (
         <>
-            <Container className={clsx(classes.root)} fluid>
+            <Container className={clsx(classes.root, globalClasses.glassify)} fluid>
                 <Container>
                     <SimpleGrid cols={{ xs: 1, sm: 3 }} spacing={35}>
                         <Stack>
