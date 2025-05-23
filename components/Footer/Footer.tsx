@@ -22,7 +22,7 @@ export default function Footer() {
             <Container>
                 <motion.div
                     style={{ position: 'relative' }}
-                    initial={{ bottom: -100, opacity: 0 }}
+                    initial={{ bottom: -50, opacity: 0 }}
                     transition={{ type: 'tween' }}
                     whileInView={{ bottom: 0, opacity: 1 }}
                 >
@@ -76,7 +76,7 @@ export default function Footer() {
 
                         <Stack>
                             <Text size="md" fw={700} >Subscribe </Text>
-                            <Text size="xs" fw={100}>In case you miss me, no spam.</Text>
+                            <Text size="xs" fw={100}>In case you miss me, no spam surely.</Text>
                             <Group gap='xs'>
                                 <TextInput size="xs" placeholder="Your Email" />
                                 <Button size="xs" rightSection={<IconMail size={14} />} onClick={handleSubscribeButton}>Subscribe</Button>

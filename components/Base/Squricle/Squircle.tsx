@@ -1,11 +1,22 @@
 "use client"
 
+import { useMantineTheme } from "@mantine/core"
 import { frame, motion, useSpring } from "motion/react"
 import React, { RefObject, useEffect, useRef } from "react"
 
 export default function Squircle() {
     const ref = useRef<HTMLDivElement>(null)
     const { x, y } = useFollowPointer(ref)
+    const theme = useMantineTheme();
+
+    const ball: React.CSSProperties = {
+        width: 80,
+        height: 80,
+        backgroundColor: theme.colors.blue[5],
+        borderRadius: "50%",
+        zIndex: -10,
+        position: 'fixed',
+    }
 
     return <motion.div
         ref={ref}
@@ -42,15 +53,4 @@ export function useFollowPointer(ref: RefObject<HTMLDivElement | null>) {
     return { x, y }
 }
 
-/**
- * ==============   Styles   ================
- */
 
-const ball: React.CSSProperties = {
-    width: 80,
-    height: 80,
-    backgroundColor: "#ff0088",
-    borderRadius: "50%",
-    zIndex: -10,
-    position: 'fixed',
-}
