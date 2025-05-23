@@ -6,8 +6,10 @@ import { theme } from '../theme';
 import Navigation from '@/components/Navigation/Navigation';
 import Footer from '@/components/Footer/Footer';
 
+
+
 export const metadata = {
-  title: 'Amin Yarits',
+  title: 'Amin Yarits Firdaus',
   description: 'Always hese ngarti gancang poho in software engineering. So i made this personal website to share my thoughts.',
 };
 
