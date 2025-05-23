@@ -7,6 +7,7 @@ import clsx from "clsx";
 import { IconBrandGithub, IconBrandLinkedin, IconBrandTwitter, IconMail } from "@tabler/icons-react";
 import { NAVIGATION_LIST, RESOURCES_LIST } from "@/constants";
 import Link from "next/link";
+import { motion } from "motion/react"
 
 export default function Footer() {
     const theme = useMantineTheme();
@@ -17,9 +18,14 @@ export default function Footer() {
     }
 
     return (
-        <>
-            <Container className={clsx(classes.root, globalClasses.glassify)} fluid>
-                <Container>
+        <Container component={motion.div} className={clsx(classes.root, globalClasses.glassify)} fluid>
+            <Container>
+                <motion.div
+                    style={{ position: 'relative' }}
+                    initial={{ bottom: -100, opacity: 0 }}
+                    transition={{ type: 'tween' }}
+                    whileInView={{ bottom: 0, opacity: 1 }}
+                >
                     <SimpleGrid cols={{ xs: 1, sm: 3 }} spacing={35}>
                         <Stack>
                             <Text size="xl" fw={700} >Amin Yarits Firdaus</Text>
@@ -77,16 +83,14 @@ export default function Footer() {
                             </Group>
                         </Stack>
                         <Stack />
-
                     </SimpleGrid>
-
                     <Divider color={theme.colors.gray[6]} classNames={{ root: classes.divider }} />
                     <Center>
                         <Text size="sm" fw={100} ta="center">Copyright © 2025 Amin Yarits. All rights reserved.</Text>
                     </Center>
-                </Container>
-            </Container >
-        </>
+                </motion.div>
 
+            </Container>
+        </Container >
     )
 }
