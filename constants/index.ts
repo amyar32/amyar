@@ -6,8 +6,8 @@ export const NAVIGATION_LIST = [
 ];
 
 export const RESOURCES_LIST = [
-    { href: '/', label: 'Educacation' },
-    { href: '/blog', label: 'Organization' },
-    { href: '/projects', label: 'Long Live Peace' },
-    { href: '/about', label: 'PUBG' },
+    { href: '/about', label: 'About' },
+    { href: '/projects', label: 'Project' },
+    { href: '/blog', label: 'Blog' },
+    { href: '/', label: 'Home' },
 ];

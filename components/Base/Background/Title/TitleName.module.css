@@ -1,0 +1,20 @@
+@keyframes reveal {
+    from {
+        color: red;
+        opacity: 0;
+        clip-path: inset(45% 20% 45% 20%);
+    }
+
+    50% {
+        color: purple;
+        opacity: 1;
+        clip-path: inset(0% 0% 0% 0%);
+    }
+}
+
+.root {
+    font-size: rem(90);
+    font-weight: 900;
+    animation: reveal 1s linear both;
+    animation-timeline: view();
+}

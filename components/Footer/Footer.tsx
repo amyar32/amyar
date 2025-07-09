@@ -1,35 +1,26 @@
 'use client'
 
-import { ActionIcon, Button, Center, Container, Divider, Group, SimpleGrid, Stack, Text, TextInput, useMantineTheme } from "@mantine/core";
+import { ActionIcon, Button,  Container,  Group, SimpleGrid, Stack, Text, TextInput } from "@mantine/core";
 import classes from './Footer.module.css';
 import globalClasses from '@/styles/global.module.css';
 import clsx from "clsx";
 import { IconBrandGithub, IconBrandLinkedin, IconBrandTwitter, IconMail } from "@tabler/icons-react";
 import { NAVIGATION_LIST, RESOURCES_LIST } from "@/constants";
 import Link from "next/link";
-import { motion } from "motion/react"
 
 export default function Footer() {
-    const theme = useMantineTheme();
-
     const handleSubscribeButton = () => {
         // eslint-disable-next-line no-alert
-        alert('why you subscribing this shit?');
+        alert('not yet ready');
     }
 
     return (
-        <Container component={motion.div} className={clsx(classes.root, globalClasses.glassify)} fluid>
+        <Container className={clsx(classes.root, globalClasses.glassify)} fluid>
             <Container>
-                <motion.div
-                    style={{ position: 'relative' }}
-                    initial={{ bottom: -50, opacity: 0 }}
-                    transition={{ type: 'tween' }}
-                    whileInView={{ bottom: 0, opacity: 1 }}
-                >
                     <SimpleGrid cols={{ xs: 1, sm: 3 }} spacing={35}>
                         <Stack>
                             <Text size="xl" fw={700} >Amin Yarits Firdaus</Text>
-                            <Text size="xs" fw={100}>Sometimes hese ngarti gancang poho in software engineering. So i made this personal website to save and share my thoughts.</Text>
+                            <Text size="xs" fw={100}>Sometimes hese ngarti gancang poho. So i made this personal website to save and share my thoughts.</Text>
                             <Group>
                                 <ActionIcon c='teal' variant="transparent">
                                     <IconMail />
@@ -84,12 +75,6 @@ export default function Footer() {
                         </Stack>
                         <Stack />
                     </SimpleGrid>
-                    <Divider color={theme.colors.gray[6]} classNames={{ root: classes.divider }} />
-                    <Center>
-                        <Text size="sm" fw={100} ta="center">Copyright © 2025 Amin Yarits. All rights reserved.</Text>
-                    </Center>
-                </motion.div>
-
             </Container>
         </Container >
     )

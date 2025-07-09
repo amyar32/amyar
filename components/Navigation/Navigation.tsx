@@ -19,7 +19,6 @@ export default function NavigationBar() {
     const { toggleColorScheme, colorScheme } = useMantineColorScheme();
     const isDarkMode = colorScheme === 'dark';
 
-
     useEffect(() => { setIsClient(true) }, [])
 
     return (
@@ -60,7 +59,6 @@ export default function NavigationBar() {
                     </ActionIcon>
                 </Group>
             </motion.div>}
-
         </Center>
     )
 }

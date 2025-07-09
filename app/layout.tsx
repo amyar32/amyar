@@ -5,8 +5,7 @@ import { ColorSchemeScript, mantineHtmlProps, MantineProvider } from '@mantine/c
 import { theme } from '../theme';
 import Navigation from '@/components/Navigation/Navigation';
 import Footer from '@/components/Footer/Footer';
-
-
+import Script from 'next/script';
 
 export const metadata = {
   title: 'Amin Yarits Firdaus',
@@ -18,6 +17,7 @@ export default function RootLayout({ children }: { children: any }) {
     <html lang="en" {...mantineHtmlProps}>
       <head>
         <ColorSchemeScript />
+        <Script src="https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js" />
         <link rel="shortcut icon" href="/favicon.svg" />
         <meta
           name="viewport"
