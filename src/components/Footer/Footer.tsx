@@ -1,6 +1,6 @@
 'use client'
 
-import { ActionIcon, Button, Container, Group, SimpleGrid, Stack, Text, TextInput } from "@mantine/core";
+import { ActionIcon, Button, Container, Divider, Group, SimpleGrid, Stack, Text, TextInput } from "@mantine/core";
 import classes from './Footer.module.css';
 import globalClasses from '@/styles/global.module.css';
 import clsx from "clsx";
@@ -14,7 +14,7 @@ export default function Footer() {
     }
 
     return (
-        <Container className={clsx(classes.root, globalClasses.glassify)} fluid>
+        <Container className={clsx(classes.root)} fluid>
             <Container>
                 <SimpleGrid cols={{ xs: 1, sm: 3 }} spacing={35}>
                     <Stack>

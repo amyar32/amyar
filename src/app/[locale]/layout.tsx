@@ -38,7 +38,6 @@ export default async function RootLayout({ children, params }: { children: any, 
           <MantineProvider theme={theme} defaultColorScheme="dark">
             <Navigation />
             {children}
-            <Footer />
           </MantineProvider>
         </NextIntlClientProvider>
       </body>
