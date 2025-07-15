@@ -1,11 +1,26 @@
-import mantine from 'eslint-config-mantine';
-import tseslint from 'typescript-eslint';
+import pluginNext from '@next/eslint-plugin-next';
+import parser from '@typescript-eslint/parser';
 
-export default tseslint.config(
-  ...mantine,
-  { ignores: ['**/*.{mjs,cjs,js,d.ts,d.mts}'] },
+export default [
   {
-    files: ['**/*.story.tsx'],
-    rules: { 'no-console': 'off' },
-  }
-);
+    name: 'ESLint Config - nextjs',
+    languageOptions: {
+      parser,
+      parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+    },
+    plugins: {
+      '@next/next': pluginNext,
+    },
+    files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
+    rules: {
+      ...pluginNext.configs.recommended.rules,
+      ...pluginNext.configs['core-web-vitals'].rules,
+    },
+  },
+];

@@ -1,4 +1,4 @@
-import Screen from "@/components/Base/Screen/Screen";
+import Screen from "@/src/components/Base/Screen/Screen";
 
 export default function TestPage() {
     return (

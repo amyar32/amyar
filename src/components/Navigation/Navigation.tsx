@@ -4,14 +4,18 @@ import { ActionIcon, Button, Center, Divider, Group, useMantineColorScheme, useM
 import globalClasses from '@/styles/global.module.css'
 import classes from "./Navigation.module.css"
 import { motion } from "motion/react"
-import Link from "next/link"
+
 import clsx from "clsx"
-import { usePathname } from "next/navigation"
-import { IconMoon, IconSun } from "@tabler/icons-react"
+import { IconLanguage, IconMoon, IconSun } from "@tabler/icons-react"
 import { useEffect, useState } from "react"
 import { NAVIGATION_LIST } from "@/constants"
+import { useLocale } from "next-intl"
+import { Link, usePathname } from "@/i18n/navigation"
+
 
 export default function NavigationBar() {
+    const locale = useLocale();
+
     const pathname = usePathname();
     const [isClient, setIsClient] = useState<boolean>(false);
 
@@ -56,6 +60,9 @@ export default function NavigationBar() {
                     />
                     <ActionIcon size='sm' variant="transparent" onClick={toggleColorScheme}>
                         {isDarkMode ? <IconSun color="orange" /> : <IconMoon color="teal" />}
+                    </ActionIcon>
+                    <ActionIcon size='sm' variant="transparent" component={Link} href={pathname} locale={locale === 'id' ? 'en' : 'id'}>
+                        <IconLanguage />
                     </ActionIcon>
                 </Group>
             </motion.div>}
