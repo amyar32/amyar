@@ -9,9 +9,9 @@ export default async function HomePage() {
 
   return (
     <Screen>
-      <Container h='100%'>
+      <Container h='100%' py={70}>
         <SimpleGrid h='100%' cols={{ sm: 1, md: 2 }}>
-          <Flex w="100%" direction='column' justify='center' align={{ base: 'flex-end', md: 'center' }}>
+          <Flex w="100%" direction='column' justify={{ base: 'flex-end', md: 'center' }} align={{ base: 'flex-end', md: 'center' }}>
             <AspectRatio ratio={1 / 1} maw={500} mx="auto">
               <Image
                 fit="contain"

@@ -14,7 +14,7 @@ export default function Footer() {
     }
 
     return (
-        <Container className={clsx(classes.root)} fluid>
+        <Container className={clsx(classes.root, globalClasses.glassify)} fluid>
             <Container>
                 <SimpleGrid cols={{ xs: 1, sm: 3 }} spacing={35}>
                     <Stack>
