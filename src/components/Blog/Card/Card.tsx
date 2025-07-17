@@ -15,7 +15,7 @@ export default function Card() {
                         What Caused the 'Baby Boom’? What Would It Take to Have Another?
                     </Title>
                     <Text size="sm" lineClamp={2}>Governments worldwide are trying to increase fertility with cash. But the most famous birthrate "boom" had a lot to do with </Text>
-                    <Text c='gray' size='xs' fw={600} tt='uppercase'>17 Juli 2025 - Amin Yarits</Text>
+                    <Text c='dimmed' fz={10} fw={600} tt='uppercase'>17 Juli 2025 - Amin Yarits - 15 Minutes to Read</Text>
                 </Stack>
                 <Stack>
                     <AspectRatio ratio={1080 / 720} miw={140} maw={300}>
