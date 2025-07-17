@@ -12,7 +12,8 @@ import { routing } from '@/i18n/routing';
 
 export const metadata = {
   title: 'Amin Yarits Firdaus',
-  description: 'Always hese ngarti gancang poho in software engineering. So i made this personal website to share my thoughts.',
+  description: "I am frontend developer focused on building simple, functional interfaces with React and Next.js. I'm also learning SvelteKit.",
+
 };
 
 export default async function RootLayout({ children, params }: { children: any, params: Promise<{ locale: string }> }) {

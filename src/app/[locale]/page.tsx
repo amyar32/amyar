@@ -20,20 +20,20 @@ export default async function HomePage() {
           </Flex>
           <Stack justify="center" gap='xl'>
             <Stack gap='xs'>
-              <Title fz={{ xs: 40, sm: 70 }} fw={700}>
+              <Title fz={{ xs: 40, sm: 70 }} fw={700} ta={{ base: 'center', md: 'left' }}>
                 {t('name')}
               </Title>
-              <Highlight highlight={['React', 'Next.js', "Sveltekit"]} fz={{ xs: 15, sm: 18 }} color='gray'>
+              <Highlight highlight={['React', 'Next.js', "Sveltekit"]} fz={{ xs: 15, sm: 18 }} color='gray' ta={{ base: 'center', md: 'left' }}>
                 {t('description')}
               </Highlight>
             </Stack>
-            <Blockquote fz={{ xs: 12, sm: 14 }} color="teal" icon={<IconInfoHexagon />} >
+            <Blockquote fz={{ xs: 12, sm: 14 }} color="teal" icon={<IconInfoHexagon />} display={{ base: 'none', md: 'block' }} >
               {t('activeWorking')}{' '}
               <Anchor fz={{ xs: 12, sm: 14 }} href="https://rollingglory.com/" target="_blank">
                 Rolling Glory
               </Anchor>
             </Blockquote>
-            <Group>
+            <Flex justify={{ base: 'center', md: "flex-start" }} gap="md">
               <ActionIcon component={Link} target="_blank" href="mailto:amyar32@gmail.com" variant="transparent">
                 <IconMail />
               </ActionIcon>
@@ -43,7 +43,7 @@ export default async function HomePage() {
               <ActionIcon component={Link} target="_blank" href="https://github.com/amyar32" variant="transparent">
                 <IconBrandGithub />
               </ActionIcon>
-            </Group>
+            </Flex>
           </Stack>
         </SimpleGrid>
       </Container>
