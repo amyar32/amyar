@@ -1,7 +1,16 @@
-import Screen from "@/src/components/Base/Screen/Screen";
+import Card from "@/src/components/Blog/Card/Card";
+import { Container } from "@mantine/core";
 
-export default function TestPage() {
+export default function BlogIndex() {
     return (
-        <Screen />
+        <Container py={100} size='sm'>
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+
+        </Container >
     )
 }
