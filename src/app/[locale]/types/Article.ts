@@ -1,6 +1,6 @@
 import { Meta } from "./Common"
 
-export type Articles = {
+export type Article = {
     createdAt: string
     description: string
     documentId: string
@@ -11,7 +11,12 @@ export type Articles = {
     updatedAt: Date
 }
 
+export type FetchedArticle = {
+    data: Article
+    meta: Meta
+}
+
 export type FetchedArticles = {
-    data: Articles[]
+    data: Article[]
     meta: Meta
 }

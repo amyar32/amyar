@@ -1,11 +1,16 @@
 import { Avatar, Container, Divider, Group, Stack, Text, Title } from "@mantine/core";
+import { FetchedArticle } from "../../types/Article";
+import { fetchClient } from "@/lib/fetchClient";
 
-export default function BlogDetail() {
+export default async function BlogDetail({ params }: { params: Promise<{ documentId: string }> }) {
+    const fetchedArticle: FetchedArticle = await fetchClient('/api/articles/' + ((await params).documentId) + '?populate=*');
+    const article = fetchedArticle.data;
+
     return (
         <Container py={100} size='sm'>
             <Stack>
-                <Title>What Caused the 'Baby Boom’? What Would It Take to Have Another?</Title>
-                <Text c='dimmed'>Governments worldwide are trying to increase fertility with cash. But the most famous birthrate "boom" had a lot to do with science and technology, as well.</Text>
+                <Title>{article.title}</Title>
+                <Text c='dimmed'>{article.description}</Text>
                 <Divider />
                 <Group>
                     <Avatar radius="xl" />
