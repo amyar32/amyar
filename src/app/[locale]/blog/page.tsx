@@ -4,12 +4,20 @@ import { FetchedArticles } from "../types/Article";
 import { fetchClient } from "@/lib/fetchClient";
 
 export default async function BlogIndex() {
-    const fetchedArticles: FetchedArticles = await fetchClient('/api/articles');
+    const populateQuery = 'populate[cover][fields][0]=url&populate[author][fields][0]=name&populate[author][fields][1]=publishedAt'
+    const fetchedArticles: FetchedArticles = await fetchClient('/api/articles?' + populateQuery);
 
     return (
         <Container py={100} size='sm'>
             {fetchedArticles.data.map(article => (
-                <Card key={article.documentId} description={article.description} documentId={article.documentId} title={article.title} />
+                <Card
+                    key={article.documentId}
+                    description={article.description}
+                    documentId={article.documentId}
+                    title={article.title}
+                    cover={article.cover.url}
+                    author={article.author}
+                />
             ))}
         </Container >
     )

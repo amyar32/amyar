@@ -61,11 +61,11 @@ export default function NavigationBar() {
                     <ActionIcon size='sm' variant="transparent" onClick={toggleColorScheme}>
                         {isDarkMode ? <IconSun color="orange" /> : <IconMoon color="teal" />}
                     </ActionIcon>
-                    <ActionIcon size='sm' variant="transparent" component={Link} href={pathname} locale={locale === 'id-ID' ? 'en-US' : 'id-ID'}>
-                        <IconLanguage />
+                    <ActionIcon size='sm' variant="transparent" component={Link} href={pathname} locale={locale === 'id' ? 'en' : 'id'}>
+                        < IconLanguage />
                     </ActionIcon>
                 </Group>
             </motion.div>}
-        </Center>
+        </Center >
     )
 }

@@ -9,6 +9,14 @@ export type Article = {
     slug: string
     title: string
     updatedAt: Date
+    cover: any
+    author: {
+        name: string
+        publishedAt: string
+        avatar: string
+    }
+    body: string
+    locale: string
 }
 
 export type FetchedArticle = {
