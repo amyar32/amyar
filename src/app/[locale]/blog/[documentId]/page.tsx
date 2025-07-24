@@ -9,7 +9,9 @@ export async function generateMetadata({ params }: { params: Promise<{ documentI
     const fetchedArticle: FetchedArticle = await fetchClient('/api/articles/' + (await params).documentId + '?' + populateQuery);
     const article = fetchedArticle.data;
 
-    const imageUrl = `/api/${article.cover?.formats?.large?.url || article.cover?.url}`;
+    const imageUrl = `${article.cover?.formats?.large?.url || article.cover?.url}`;
+
+    console.log(article);
 
     return {
         title: article.title,
@@ -18,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ documentI
         openGraph: {
             title: article.title,
             description: article.description,
-            url: `/api//blog/${article.slug}`,
+            url: `/api/blog/${article.documentId}`,
             type: 'article',
             images: [{
                 url: imageUrl,

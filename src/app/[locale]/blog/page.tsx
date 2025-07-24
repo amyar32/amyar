@@ -4,7 +4,7 @@ import { FetchedArticles } from "../types/Article";
 import { fetchClient } from "@/lib/fetchClient";
 
 export default async function BlogIndex() {
-    const populateQuery = 'populate[cover][fields][0]=url&populate[author][fields][0]=name&populate[author][fields][1]=publishedAt'
+    const populateQuery = 'populate=*'
     const fetchedArticles: FetchedArticles = await fetchClient('/api/articles?' + populateQuery);
 
     return (

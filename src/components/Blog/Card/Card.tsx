@@ -30,7 +30,7 @@ export default function Card(props: CardProps) {
                     <AspectRatio ratio={1080 / 720} w={150}>
                         <Image
                             radius='md'
-                            src={'/api' + props.cover}
+                            src={props.cover}
                             alt="Panda"
                         />
                     </AspectRatio>
