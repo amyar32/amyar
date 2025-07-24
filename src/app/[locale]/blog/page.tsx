@@ -3,8 +3,8 @@ import { Container } from "@mantine/core";
 import { FetchedArticles } from "../types/Article";
 import { fetchClient } from "@/lib/fetchClient";
 
-export default async function BlogIndex() {
-    const populateQuery = 'populate=*'
+export default async function BlogIndex({ params }: { params: Promise<{ locale: string }> }) {
+    const populateQuery = `[locale]=${(await params).locale}&populate=*`;
     const fetchedArticles: FetchedArticles = await fetchClient('/api/articles?' + populateQuery);
 
     return (
