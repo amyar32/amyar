@@ -4,9 +4,9 @@ import { fetchClient } from "@/lib/fetchClient";
 import type { Metadata } from 'next';
 import Markdown from "@/src/components/Base/Markdown/Markdown";
 
-export async function generateMetadata({ params }: { params: { documentId: string, locale: string } }): Promise<Metadata> {
-    const populateQuery = `[locale]=${params.locale}&populate=*`;
-    const fetchedArticle: FetchedArticle = await fetchClient('/api/articles/' + params.documentId + '?' + populateQuery);
+export async function generateMetadata({ params }: { params: Promise<{ documentId: string, locale: string }> }): Promise<Metadata> {
+    const populateQuery = `[locale]=${(await params).locale}&populate=*`;
+    const fetchedArticle: FetchedArticle = await fetchClient('/api/articles/' + (await params).documentId + '?' + populateQuery);
     const article = fetchedArticle.data;
 
     const imageUrl = `/api/${article.cover?.formats?.large?.url || article.cover?.url}`;
