@@ -13,7 +13,7 @@ export default async function BlogIndex({ params }: { params: Promise<{ locale: 
                 <Card
                     key={article.documentId}
                     description={article.description}
-                    documentId={article.documentId}
+                    slug={article.slug}
                     title={article.title}
                     cover={article.cover.url}
                     author={article.author}

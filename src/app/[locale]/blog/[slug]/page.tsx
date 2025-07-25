@@ -1,13 +1,13 @@
 import { Avatar, Container, Divider, Group, Stack, Text, Title } from "@mantine/core";
-import { FetchedArticle } from "../../../../types/Article";
+import { FetchedArticle, FetchedArticles } from "../../../../types/Article";
 import { fetchClient } from "@/lib/fetchClient";
 import type { Metadata } from 'next';
 import Markdown from "@/src/components/Base/Markdown/Markdown";
 
-export async function generateMetadata({ params }: { params: Promise<{ documentId: string, locale: string }> }): Promise<Metadata> {
-    const populateQuery = `[locale]=${(await params).locale}&populate=*`;
-    const fetchedArticle: FetchedArticle = await fetchClient('/api/articles/' + (await params).documentId + '?' + populateQuery);
-    const article = fetchedArticle.data;
+export async function generateMetadata({ params }: { params: Promise<{ slug: string, locale: string }> }): Promise<Metadata> {
+    const populateQuery = `filters[slug][$eq]=${(await params).slug}&[locale]=${(await params).locale}&populate=*`;
+    const fetchedArticle: FetchedArticles = await fetchClient('/api/articles/' + '?' + populateQuery);
+    const article = fetchedArticle.data[0];
 
     const imageUrl = `${article.cover?.formats?.large?.url || article.cover?.url}`;
 
@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ documentI
         openGraph: {
             title: article.title,
             description: article.description,
-            url: `/api/blog/${article.documentId}`,
+            url: `/api/blog/${article.slug}`,
             type: 'article',
             images: [{
                 url: imageUrl,
@@ -37,10 +37,10 @@ export async function generateMetadata({ params }: { params: Promise<{ documentI
     };
 }
 
-export default async function BlogDetail({ params }: { params: Promise<{ documentId: string, locale: string }> }) {
-    const populateQuery = `[locale]=${(await params).locale}&populate=*`;
-    const fetchedArticle: FetchedArticle = await fetchClient('/api/articles/' + (await params).documentId + '?' + populateQuery);
-    const article = fetchedArticle.data;
+export default async function BlogDetail({ params }: { params: Promise<{ slug: string, locale: string }> }) {
+    const populateQuery = `filters[slug][$eq]=${(await params).slug}&[locale]=${(await params).locale}&populate=*`;
+    const fetchedArticle: FetchedArticles = await fetchClient('/api/articles/' + '?' + populateQuery);
+    const article = fetchedArticle.data[0];
 
     return (
         <Container py={100} size='sm'>

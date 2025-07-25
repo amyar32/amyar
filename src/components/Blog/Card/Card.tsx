@@ -4,7 +4,7 @@ import NavigationLink from "../../Base/NavigationLink/NavigationLink";
 type CardProps = {
     title: string,
     description: string,
-    documentId: string,
+    slug: string,
     cover: string,
     author: {
         name: string,
@@ -17,7 +17,7 @@ export default function Card(props: CardProps) {
         <>
             <Group wrap="nowrap" justify="space-between">
                 <Stack gap='xs' >
-                    <NavigationLink href={'/blog/' + props.documentId}>
+                    <NavigationLink href={'/blog/' + props.slug}>
                         <Title order={4} lineClamp={2} >
                             {props.title}
                         </Title>
