@@ -1,6 +1,6 @@
 import Card from "@/src/components/Blog/Card/Card";
 import { Container } from "@mantine/core";
-import { FetchedArticles } from "../types/Article";
+import { FetchedArticles } from "../../../types/Article";
 import { fetchClient } from "@/lib/fetchClient";
 
 export default async function BlogIndex({ params }: { params: Promise<{ locale: string }> }) {

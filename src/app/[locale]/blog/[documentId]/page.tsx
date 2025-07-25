@@ -1,5 +1,5 @@
 import { Avatar, Container, Divider, Group, Stack, Text, Title } from "@mantine/core";
-import { FetchedArticle } from "../../types/Article";
+import { FetchedArticle } from "../../../../types/Article";
 import { fetchClient } from "@/lib/fetchClient";
 import type { Metadata } from 'next';
 import Markdown from "@/src/components/Base/Markdown/Markdown";
@@ -10,8 +10,6 @@ export async function generateMetadata({ params }: { params: Promise<{ documentI
     const article = fetchedArticle.data;
 
     const imageUrl = `${article.cover?.formats?.large?.url || article.cover?.url}`;
-
-    console.log(article);
 
     return {
         title: article.title,
